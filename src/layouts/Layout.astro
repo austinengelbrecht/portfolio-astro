@@ -1,5 +1,6 @@
 ---
-import Header from "../components/Header.astro";
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import Header from "../components/layout/SiteHeader.astro";
 
 
 const { title = "Austin Engelbrect | Front-end Dev" } = Astro.props; 
@@ -17,9 +18,11 @@ const { title = "Austin Engelbrect | Front-end Dev" } = Astro.props;
 	<body>
 		<Header />
 
-		<main>
+		<main class="main-content">
 			<slot />
 		</main>
+
+		<SiteFooter />
 	</body>
 </html>
 
