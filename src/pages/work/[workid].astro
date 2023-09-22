@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return [{ params: { workid: "PageTest" } }];
+}
+
+const { title } = Astro.props;
+---
+
+<Layout title="PageTest">
+  {title}
+</Layout>
