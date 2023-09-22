@@ -1,5 +1,11 @@
-<a href="#" class="card text-content bg-space-3  block ">
-  <img src="" alt="Img alt text" width="" height="" aria-hidden="true"/>
+<a href="#" class="card text-content bg-space-3 block">
+  <img
+    src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/work/Account_Messages.webp?t=2023-08-06T05%3A54%3A08.666Z"
+    alt="Img alt text"
+    width=""
+    height=""
+    aria-hidden="true"
+  />
 
   <div class="card-info">
     <h2 class="card-info-title">This is project title</h2>
@@ -8,25 +14,23 @@
 </a>
 
 <style lang="scss">
-.card {
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow:  1px 1px black;
-  transition: all .2s ease-in-out;
+  .card {
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px black;
+    transition: all 0.2s ease-in-out;
 
+    &:hover {
+      .card-info-title {
+        text-decoration: underline;
+      }
 
-  &:hover {
-    .card-info-title {
-      text-decoration: underline;
+      box-shadow: 8px 8px black;
+      transform: translateY(-2px);
     }
 
-    box-shadow:  8px 8px black;
-    transform: translateY(-2px);
-
+    &-info {
+      padding: 1.5rem 1rem;
+    }
   }
-
-  &-info {
-    padding: 1.5rem 1rem;
-  }
-}
 </style>
