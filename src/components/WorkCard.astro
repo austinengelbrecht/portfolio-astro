@@ -1,20 +1,32 @@
-<a href="#" class="text-content ">
-  <img src="" alt="" width="" height="" aria-hidden="true"/>
+<a href="#" class="card text-content bg-space-3  block ">
+  <img src="" alt="Img alt text" width="" height="" aria-hidden="true"/>
 
-  <div>
-    <h2 class="card-title">This is project title</h2>
+  <div class="card-info">
+    <h2 class="card-info-title">This is project title</h2>
     <p>A short description of the project</p>
   </div>
 </a>
 
-<style>
+<style lang="scss">
 .card {
   text-decoration: none;
+  border-radius: 8px;
+  box-shadow:  1px 1px black;
+  transition: all .2s ease-in-out;
+
 
   &:hover {
-    .card-title {
+    .card-info-title {
       text-decoration: underline;
     }
+
+    box-shadow:  8px 8px black;
+    transform: translateY(-2px);
+
+  }
+
+  &-info {
+    padding: 1.5rem 1rem;
   }
 }
 </style>
