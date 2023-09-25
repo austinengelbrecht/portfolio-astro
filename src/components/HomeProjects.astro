@@ -7,11 +7,21 @@ const projects = await getCollection("projects");
 ---
 
 <section>
-  <SectionHeader title="Recent Projects" />
+  <h2>Recent Projects</h2>
 
   <ul>
     <li>
-      {projects.slice(0, 4).map((page) => <HomeProjectsCard />)}
+      {
+        projects
+          .slice(0, 4)
+          .map((page) => (
+            <HomeProjectsCard
+              url={"/projects/" + page.slug}
+              title={page.data.title}
+              description={page.data.description}
+            />
+          ))
+      }
     </li>
   </ul>
 </section>
