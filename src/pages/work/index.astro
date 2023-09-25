@@ -4,8 +4,6 @@ import WorkCard from "../../components/WorkCard.astro";
 
 import { getCollection } from "astro:content";
 const workPages = await getCollection("work");
-
-workPages.map((page) => console.log(page));
 ---
 
 <Layout title="Work | Austin Engelbrecht">
