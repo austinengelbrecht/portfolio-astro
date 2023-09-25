@@ -1,10 +1,17 @@
 ---
 import SectionHeader from "./SectionHeader.astro";
+import HomeProjectsCard from "./projects/HomeProjectsCard.astro";
 
 import { getCollection } from "astro:content";
-const projects = await getCollection("work");
+const projects = await getCollection("projects");
 ---
 
 <section>
   <SectionHeader title="Recent Projects" />
+
+  <ul>
+    <li>
+      {projects.slice(0, 4).map((page) => <HomeProjectsCard />)}
+    </li>
+  </ul>
 </section>
