@@ -1,5 +1,10 @@
 ---
+import SectionHeader from "./SectionHeader.astro";
 
+import { getCollection } from "astro:content";
+const projects = await getCollection("work");
 ---
 
-<section></section>
+<section>
+  <SectionHeader title="Recent Projects" />
+</section>
