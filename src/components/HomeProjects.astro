@@ -9,21 +9,19 @@ const projects = await getCollection("projects");
   <h2>Recent Projects</h2>
 
   <ul class="projects-list">
-    <li>
-      {
-        projects
-          .slice(0, 4)
-          .map((page) => (
-            <HomeProjectsCard
-              url={"/projects/" + page.slug}
-              title={page.data.title}
-              description={page.data.description}
-              previewImg={page.data.previewImg}
-              tech={page.data.tech}
-            />
-          ))
-      }
-    </li>
+    {
+      projects.slice(0, 4).map((page) => (
+        <li class="projects-list-item">
+          <HomeProjectsCard
+            url={"/projects/" + page.slug}
+            title={page.data.title}
+            description={page.data.description}
+            previewImg={page.data.previewImg}
+            tech={page.data.tech}
+          />
+        </li>
+      ))
+    }
   </ul>
 
   <a href="/projects">View All Projects</a>
@@ -36,8 +34,13 @@ const projects = await getCollection("projects");
 
     &-list {
       display: flex;
+      flex-flow: row wrap;
       gap: 1rem;
       margin-bottom: 1rem;
+
+      &-item {
+        max-width: 45%;
+      }
     }
   }
 </style>
