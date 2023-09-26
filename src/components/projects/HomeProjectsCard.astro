@@ -3,6 +3,17 @@ const { url, title, description, previewImg, tech } = Astro.props;
 ---
 
 <a href={url}>
+  <img
+    src={previewImg}
+    alt="Preview Image"
+    width="200"
+    height="200"
+    aria-hidden="true"
+  />
   <h3>{title}</h3>
   <p>{description}</p>
+
+  <ul>
+    {tech.map((element) => <li>{element}</li>)}
+  </ul>
 </a>
