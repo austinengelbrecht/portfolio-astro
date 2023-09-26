@@ -4,18 +4,21 @@ const { url, title, description, previewImg, tech } = Astro.props;
 
 <a href={url} class="project">
   <img
-    src={previewImg}
-    alt="Preview Image"
+    src={previewImg.src}
+    alt={previewImg.alt}
     width="200"
     height="200"
     aria-hidden="true"
   />
   <div>
-    <ul class="project-tech">
-      {tech.map((element) => <li class="project-tech-badge">{element}</li>)}
-    </ul>
+    <div class="project-header">
+      <h3 class="project-header-title">{title}</h3>
 
-    <h3>{title}</h3>
+      <ul class="project-tech">
+        {tech.map((element) => <li class="project-tech-badge">{element}</li>)}
+      </ul>
+    </div>
+
     <p>{description}</p>
   </div>
 </a>
@@ -29,6 +32,17 @@ const { url, title, description, previewImg, tech } = Astro.props;
     padding: 1rem;
     background-color: #301e67;
     border-radius: 8px;
+    margin-bottom: 1rem;
+
+    &-header {
+      display: flex;
+      gap: 1rem;
+      flex-flow: row wrap;
+
+      &-title {
+        margin: 0;
+      }
+    }
 
     &-tech {
       display: flex;
