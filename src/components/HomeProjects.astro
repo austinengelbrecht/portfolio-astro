@@ -19,6 +19,8 @@ const projects = await getCollection("projects");
               url={"/projects/" + page.slug}
               title={page.data.title}
               description={page.data.description}
+              previewImg={page.data.previewImg}
+              tech={page.data.previewImg}
             />
           ))
       }
