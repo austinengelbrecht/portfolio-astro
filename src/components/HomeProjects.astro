@@ -3,6 +3,11 @@ import HomeProjectsCard from "./projects/HomeProjectsCard.astro";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
+projects.sort(
+  (a, b) =>
+    Date.parse(b.data.date.toISOString()) -
+    Date.parse(a.data.date.toISOString())
+);
 ---
 
 <section class="projects">

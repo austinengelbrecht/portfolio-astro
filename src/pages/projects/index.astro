@@ -4,6 +4,11 @@ import WorkCard from "../../components/WorkCard.astro";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
+projects.sort(
+  (a, b) =>
+    Date.parse(b.data.date.toISOString()) -
+    Date.parse(a.data.date.toISOString())
+);
 ---
 
 <Layout title="Work | Austin Engelbrecht">
