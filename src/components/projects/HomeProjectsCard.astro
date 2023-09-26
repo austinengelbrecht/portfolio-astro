@@ -2,7 +2,7 @@
 const { url, title, description, previewImg, tech } = Astro.props;
 ---
 
-<a href={url}>
+<a href={url} class="project">
   <img
     src={previewImg}
     alt="Preview Image"
@@ -10,10 +10,24 @@ const { url, title, description, previewImg, tech } = Astro.props;
     height="200"
     aria-hidden="true"
   />
-  <h3>{title}</h3>
-  <p>{description}</p>
-
-  <ul>
-    {tech.map((element) => <li>{element}</li>)}
-  </ul>
+  <div>
+    <div>
+      <h3>{title}</h3>
+      <ul>
+        {tech.map((element) => <li>{element}</li>)}
+      </ul>
+    </div>
+    <p>{description}</p>
+  </div>
 </a>
+
+<style lang="scss">
+  .project {
+    display: flex;
+    gap: 1rem;
+    color: #efedff;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #301e67;
+  }
+</style>
