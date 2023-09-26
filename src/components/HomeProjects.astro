@@ -1,5 +1,4 @@
 ---
-import SectionHeader from "./SectionHeader.astro";
 import HomeProjectsCard from "./projects/HomeProjectsCard.astro";
 
 import { getCollection } from "astro:content";
@@ -9,7 +8,7 @@ const projects = await getCollection("projects");
 <section class="projects">
   <h2>Recent Projects</h2>
 
-  <ul>
+  <ul class="projects-list">
     <li>
       {
         projects
@@ -26,6 +25,8 @@ const projects = await getCollection("projects");
       }
     </li>
   </ul>
+
+  <a href="/projects">View All Projects</a>
 </section>
 
 <style lang="scss">
@@ -36,6 +37,7 @@ const projects = await getCollection("projects");
     &-list {
       display: flex;
       gap: 1rem;
+      margin-bottom: 1rem;
     }
   }
 </style>
