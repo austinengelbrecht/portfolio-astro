@@ -2,53 +2,55 @@
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import Header from "../components/layout/SiteHeader.astro";
 
-
-const { title = "Austin Engelbrect | Front-end Dev" } = Astro.props; 
+const { title = "Austin Engelbrect | Front-end Dev" } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
 
-		<main class="main-content">
-			<slot />
-		</main>
+    <main class="main-content">
+      <slot />
+    </main>
 
-		<SiteFooter />
-	</body>
+    <SiteFooter />
+  </body>
 </html>
 
 <style is:global lang="scss">
-@import "../styles/global";
+  @import "../styles/global";
 
-html,
-body {
-  background-color: #03001c;
-  padding: 0;
-  margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #efedff;
-}
+  html,
+  body {
+    background-color: #03001c;
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #efedff;
+  }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.main-content {
-  min-height: 100vh;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 4rem;
-}
+  .main-content {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 4rem;
+  }
+
+  @import "../styles/global.scss";
 </style>
