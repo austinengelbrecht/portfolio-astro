@@ -1,3 +1,6 @@
+// Global Fonts
+/* ------------------- */
+
 // Source Sans Pro
 // font-family: 'Source Sans Pro', sans-serif;
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
@@ -5,3 +8,60 @@
 // Audiowide
 // font-family: 'Audiowide', cursive;
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+// Global Font Styling
+/* ------------------- */
+
+//Global Font Size
+html {
+  font-size: 16px;
+}
+
+//Default Font Styling
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #efedff;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: "Audiowide", cursive;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.488rem;
+}
+
+h2 {
+  font-size: 2.074rem;
+}
+
+h3 {
+  font-size: 1.728rem;
+}
+
+h4 {
+  font-size: 1.44rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+small {
+  font-size: 0.833rem;
+}
