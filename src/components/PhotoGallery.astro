@@ -1,10 +1,12 @@
 ---
 const { dataLink } = Astro.props;
 
+console.log(dataLink);
+
 let data;
 
 if (dataLink) {
-  const reponse = await fetch(dataLink);
+  const reponse = await fetch("../data/accountMessagesImages.json");
   data = await reponse.json();
 } else {
   data = false;
