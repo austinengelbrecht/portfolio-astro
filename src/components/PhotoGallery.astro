@@ -1,23 +1,42 @@
 ---
-const { galleryData } = Astro.props;
+const { dataLink } = Astro.props;
+
+let data;
+
+if (dataLink) {
+  const reponse = await fetch(dataLink);
+  data = await reponse.json();
+} else {
+  data = false;
+}
 ---
 
 <section>
-  <div>
-    <img src="" alt="" />
-    <button></button>
-    <button></button>
-  </div>
+  {
+    data && (
+      <>
+        <div>
+          <img src="" alt="" />
+          <button type="button" id="prev" />
+          <button type="button" id="next" />
+        </div>
 
-  <ul>
-    <li>
-      <button>
-        <img src="" alt="" />
-      </button>
-    </li>
-  </ul>
+        <ul>
+          {data.map((img, index) => (
+            <li>
+              <button type="button" id={`gallery-${index}`}>
+                <img src={img.src} alt={img.alt} />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
 </section>
 
-<script></script>
+<script>
+  let index = 0;
+</script>
 
 <style lang="scss"></style>
