@@ -1,11 +1,9 @@
 ---
 const { dataLink } = Astro.props;
 
-console.log(Astro.url.origin + "/api");
+// console.log(Astro.url.origin + "/api");
 
-// let data;
-
-const reponse = await fetch(Astro.url.origin + "/api/projectImages");
+const reponse = await fetch(Astro.url.origin + dataLink);
 const data = await reponse.json();
 ---
 
@@ -30,7 +28,7 @@ const data = await reponse.json();
         </ul>
       </>
     )
-  }
+  } else {(<div>Could not get data</div>)}
 </section>
 
 <script>
