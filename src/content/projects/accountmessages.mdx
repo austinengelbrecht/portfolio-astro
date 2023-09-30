@@ -9,8 +9,10 @@ tech: ["Elm", "SASS", ".NET"]
 date: 2023-09-25
 ---
 
-<!-- import PhotoGallery from "../../components/PhotoGallery.astro";
+dataLink="/api/projectImages/accountMessages"
 
-<PhotoGallery dataLink="/api/projectImages/accountMessages" /> -->
+import PhotoGallery from "../../components/projects/PhotoGallery.vue";
+
+<PhotoGallery client:load />
 
 Test content
