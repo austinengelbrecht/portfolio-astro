@@ -1,10 +1,8 @@
 ---
 const { dataLink } = Astro.props;
 
-// console.log(Astro.url.origin + "/api");
-
 const reponse = await fetch(Astro.url.origin + dataLink);
-const data = await reponse.json();
+let data = await reponse.json();
 ---
 
 <div>
@@ -40,6 +38,25 @@ const data = await reponse.json();
 
 <script>
   let index = 0;
+
+  document.getElementById("next")?.addEventListener("click", nextImg);
+  document.getElementById("prev")?.addEventListener("click", prevImg);
+
+  // function switchImg(newIndex) {
+  //   index = newIndex;
+  // }
+
+  function prevImg() {
+    if (index > 0) {
+      index--;
+    }
+  }
+
+  function nextImg() {
+    if (index < this.data.length - 1) {
+      index++;
+    }
+  }
 </script>
 
 <style lang="scss">
