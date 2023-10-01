@@ -44,9 +44,9 @@ let data = await reponse.json();
           {data.map((img, index) => (
             <li>
               <button
-                class="gallrey-carousel-button"
+                class="gallery-carousel-button"
                 type="button"
-                id={`gallery-${index}`}
+                id="carousel-button"
                 class="image-button"
               >
                 <img
@@ -69,8 +69,10 @@ let imgIndex = 0;
 document.getElementById("next")?.addEventListener("click", nextImg);
 document.getElementById("prev")?.addEventListener("click", prevImg);
 
-const carouselImgs = document.querySelectorAll(".gallery-carousel-img");
-const imageButtons = document.querySelectorAll(".image-button");
+const carouselImgs = document.querySelectorAll(
+  ".gallery-carousel-button-img"
+);
+const imageButtons = document.querySelectorAll("#carousel-button");
 const primaryImg = document.querySelector(".gallery-primary-img");
 
 function switchImg(src, alt) {
