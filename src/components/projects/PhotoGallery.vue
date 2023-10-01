@@ -25,6 +25,9 @@
 
 <script>
 export default {
+  props: {
+    data: { type: String, required: true },
+  },
   data() {
     return {
       currentIndex: 0,
