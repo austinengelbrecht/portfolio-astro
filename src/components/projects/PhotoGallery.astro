@@ -29,7 +29,11 @@ let data = await reponse.json();
         <ul>
           {data.map((img, index) => (
             <li>
-              <button type="button" id={`gallery-${index}`}>
+              <button
+                type="button"
+                id={`gallery-${index}`}
+                class="image-button"
+              >
                 <img src={img.src} alt={img.alt} />
               </button>
             </li>
@@ -40,7 +44,7 @@ let data = await reponse.json();
   }
 </div>
 
-<script is:inline src="../../js/photoGallery.js"></script>
+<script src="../../js/photoGallery.js" define:vars={{ data }}></script>
 
 <style lang="scss">
   .gallery {
