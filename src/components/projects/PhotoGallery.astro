@@ -106,10 +106,16 @@ imageButtons.forEach((button, index) => {
 </script>
 
 <style lang="scss">
+  $break: 845px;
+
   .gallery {
     display: flex;
     justify-content: center;
     gap: 1rem;
+
+    @media (max-width: $break) {
+      flex-direction: column;
+    }
 
     &-primary {
       position: relative;
@@ -120,6 +126,12 @@ imageButtons.forEach((button, index) => {
         bottom: 12px;
         display: flex;
         flex-direction: column;
+
+        @media (max-width: $break) {
+          transform: rotate(-90deg);
+          right: 40px;
+          bottom: -16px;
+        }
 
         &-prev,
         &-next {
@@ -143,14 +155,25 @@ imageButtons.forEach((button, index) => {
       }
 
       &-img {
-        height: 600px;
-        width: auto;
+        width: 600px;
+        height: auto;
+
+        @media (max-width: $break) {
+          max-width: 100%;
+          width: 100%;
+        }
       }
     }
 
     &-carousel {
       max-height: 600px;
       overflow: hidden scroll;
+
+      @media (max-width: $break) {
+        overflow: scroll hidden;
+        display: flex;
+        gap: 0.5rem;
+      }
 
       &-button {
         margin-bottom: 0.5rem;
