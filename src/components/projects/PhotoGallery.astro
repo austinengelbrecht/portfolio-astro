@@ -21,11 +21,19 @@ let data = await reponse.json();
           />
 
           <div class="gallery-primary-controls">
-            <button type="button" id="prev">
+            <button
+              type="button"
+              id="prev"
+              class="gallery-primary-controls-prev"
+            >
               <span class="sr-only">Previous Image</span>
               <Image src={arrowUp} alt="Arrow Graphic" />
             </button>
-            <button type="button" id="next">
+            <button
+              type="button"
+              id="next"
+              class="gallery-primary-controls-next"
+            >
               <span class="sr-only">Next Image</span>
               <Image src={arrowDown} alt="Arrow Graphic" />
             </button>
@@ -36,11 +44,16 @@ let data = await reponse.json();
           {data.map((img, index) => (
             <li>
               <button
+                class="gallrey-carousel-button"
                 type="button"
                 id={`gallery-${index}`}
                 class="image-button"
               >
-                <img class="gallery-carousel-img" src={img.src} alt={img.alt} />
+                <img
+                  class="gallery-carousel-button-img"
+                  src={img.src}
+                  alt={img.alt}
+                />
               </button>
             </li>
           ))}
@@ -93,6 +106,7 @@ imageButtons.forEach((button, index) => {
 <style lang="scss">
   .gallery {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 
     &-primary {
@@ -104,6 +118,25 @@ imageButtons.forEach((button, index) => {
         bottom: 12px;
         display: flex;
         flex-direction: column;
+
+        &-prev,
+        &-next {
+          background-color: var(--secondary);
+          padding: 1rem;
+          transition: background-color 0.1s ease-in-out;
+
+          &:hover {
+            background-color: var(--outer-space-4);
+          }
+        }
+
+        &-prev {
+          border-radius: 50% 50% 0 0;
+        }
+
+        &-next {
+          border-radius: 0 0 50% 50%;
+        }
       }
 
       &-img {
@@ -116,9 +149,12 @@ imageButtons.forEach((button, index) => {
       max-height: 600px;
       overflow: hidden scroll;
 
-      &-img {
-        height: 200px;
-        width: auto;
+      &-button {
+        margin-bottom: 0.5rem;
+        &-img {
+          height: 200px;
+          width: auto;
+        }
       }
     }
   }
