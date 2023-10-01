@@ -10,7 +10,11 @@ let data = await reponse.json();
     data && (
       <section class="gallery">
         <div class="gallery-primary">
-          <img class="gallery-primary-img" src="" alt="" />
+          <img
+            class="gallery-primary-img"
+            src={data[0].src}
+            alt={data[0].alt}
+          />
 
           <div class="gallery-primary-controls">
             <button type="button" id="prev">
@@ -36,38 +40,7 @@ let data = await reponse.json();
   }
 </div>
 
-<script is:inline>
-let index = 0;
-
-document.getElementById("next")?.addEventListener("click", nextImg);
-document.getElementById("prev")?.addEventListener("click", prevImg);
-
-const imageButtons = document.querySelectorAll(".image-button");
-const primaryImg = document.querySelector(".gallery-primary-img");
-
-console.log(primaryImg);
-
-if (data) {
-  primaryImg.src = this.data[0].src;
-  primaryImg.alt = this.data[0].alt;
-}
-
-function switchImg(newIndex) {
-  index = newIndex;
-}
-
-function prevImg() {
-  if (index > 0) {
-    index--;
-  }
-}
-
-function nextImg() {
-  if (index < this.data.length - 1) {
-    index++;
-  }
-}
-</script>
+<script is:inline src="../../js/photoGallery.js"></script>
 
 <style lang="scss">
   .gallery {
