@@ -14,12 +14,17 @@ projects.sort(
 ---
 
 <section class="projects">
-  <div>
-    <h2>Recent Projects</h2>
-    <!-- {projects.length > 3 && <a href="/projects">View All Projects</a>} -->
-    <a href="/projects"> View All Projects</a>
+  <div class="projects-title">
+    <h2 class="projects-title-text">Recent Projects</h2>
 
-    <Image src={arrowRight} alt="" />
+    {
+      projects.length > 3 && (
+        <a class="projects-title-link" href="/projects">
+          View All Projects
+          <Image src={arrowRight} alt="" />
+        </a>
+      )
+    }
   </div>
 
   <ul class="projects-list">
@@ -46,10 +51,31 @@ projects.sort(
     padding: 0 1rem;
 
     &-list {
-      // display: flex;
-      // flex-flow: row wrap;
-      // gap: 1rem;
       margin-bottom: 1rem;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-flow: wrap;
+      margin: 3rem 0 1.38rem;
+
+      &-text {
+        margin: 0;
+      }
+
+      &-link {
+        color: var(--content);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 </style>
