@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import arrowRight from "../assets/svg/arrow-right-line.svg";
+
 import HomeProjectsCard from "./projects/HomeProjectsCard.astro";
 
 import { getCollection } from "astro:content";
@@ -18,7 +19,7 @@ projects.sort(
     <!-- {projects.length > 3 && <a href="/projects">View All Projects</a>} -->
     <a href="/projects"> View All Projects</a>
 
-    <Image src={arrowRight} alt="arst" />
+    <Image src={arrowRight} alt="" />
   </div>
 
   <ul class="projects-list">
