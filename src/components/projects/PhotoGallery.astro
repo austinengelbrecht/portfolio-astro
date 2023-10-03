@@ -1,0 +1,190 @@
+---
+import { Image } from "astro:assets";
+import arrowUp from "../../assets/svg/arrow-up-line.svg";
+import arrowDown from "../../assets/svg/arrow-down-line.svg";
+
+const { dataLink } = Astro.props;
+
+const reponse = await fetch(Astro.url.origin + dataLink);
+let data = await reponse.json();
+---
+
+<div>
+  {
+    data && (
+      <section class="gallery">
+        <div class="gallery-primary">
+          <img
+            class="gallery-primary-img"
+            src={data[0].src}
+            alt={data[0].alt}
+            aria-hidden="true"
+          />
+
+          <div class="gallery-primary-controls">
+            <button
+              type="button"
+              id="prev"
+              class="gallery-primary-controls-prev"
+            >
+              <span class="sr-only">Previous Image</span>
+              <Image src={arrowUp} alt="Arrow Graphic" />
+            </button>
+            <button
+              type="button"
+              id="next"
+              class="gallery-primary-controls-next"
+            >
+              <span class="sr-only">Next Image</span>
+              <Image src={arrowDown} alt="Arrow Graphic" />
+            </button>
+          </div>
+        </div>
+
+        <ul class="gallery-carousel">
+          {data.map((img, index) => (
+            <li>
+              <button
+                class="gallery-carousel-button"
+                type="button"
+                id="carousel-button"
+                class="image-button"
+              >
+                <img
+                  class="gallery-carousel-button-img"
+                  src={img.src}
+                  alt={img.alt}
+                  aria-hidden="true"
+                />
+                <span class="sr-only">Additional Img #{index}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</div>
+
+<script is:inline>
+let imgIndex = 0;
+
+document.getElementById("next")?.addEventListener("click", nextImg);
+document.getElementById("prev")?.addEventListener("click", prevImg);
+
+const carouselImgs = document.querySelectorAll(
+  ".gallery-carousel-button-img"
+);
+const imageButtons = document.querySelectorAll("#carousel-button");
+const primaryImg = document.querySelector(".gallery-primary-img");
+
+function switchImg(src, alt) {
+  primaryImg.src = src;
+  primaryImg.alt = alt;
+}
+
+function prevImg() {
+  if (imgIndex > 0) {
+    imgIndex--;
+    switchImg(carouselImgs[imgIndex].src, carouselImgs[imgIndex].alt);
+  }
+}
+
+function nextImg() {
+  if (imgIndex < carouselImgs.length - 1) {
+    imgIndex++;
+    switchImg(carouselImgs[imgIndex].src, carouselImgs[imgIndex].alt);
+  }
+}
+
+imageButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const imgSrcEl = button.querySelector("img").src;
+    const imgAltEl = button.querySelector("img").alt;
+
+    imgIndex = index;
+    switchImg(imgSrcEl, imgAltEl);
+  });
+});
+</script>
+
+<style lang="scss">
+  $break: 845px;
+
+  .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (max-width: $break) {
+      flex-direction: column;
+    }
+
+    &-primary {
+      position: relative;
+
+      &-controls {
+        position: absolute;
+        right: 8px;
+        bottom: 12px;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $break) {
+          transform: rotate(-90deg);
+          right: 40px;
+          bottom: -16px;
+        }
+
+        &-prev,
+        &-next {
+          background-color: var(--secondary);
+          padding: 1rem;
+          transition: background-color 0.1s ease-in-out;
+
+          &:hover,
+          &:focus {
+            background-color: var(--secondary-dark);
+          }
+        }
+
+        &-prev {
+          border-radius: 50% 50% 0 0;
+        }
+
+        &-next {
+          border-radius: 0 0 50% 50%;
+        }
+      }
+
+      &-img {
+        width: 600px;
+        height: auto;
+
+        @media (max-width: $break) {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    &-carousel {
+      max-height: 600px;
+      overflow: hidden scroll;
+
+      @media (max-width: $break) {
+        overflow: scroll hidden;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      &-button {
+        margin-bottom: 0.5rem;
+        &-img {
+          height: 200px;
+          width: auto;
+        }
+      }
+    }
+  }
+</style>

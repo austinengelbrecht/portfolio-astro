@@ -1,0 +1,68 @@
+---
+const { url, title, description, previewImg, tech } = Astro.props;
+---
+
+<a href={url} class="project">
+  <img
+    src={previewImg.src}
+    alt={previewImg.alt}
+    width="200"
+    height="200"
+    aria-hidden="true"
+  />
+  <div>
+    <div class="project-header">
+      <h3 class="project-header-title">{title}</h3>
+
+      <ul class="project-tech">
+        {tech.map((element) => <li class="project-tech-badge">{element}</li>)}
+      </ul>
+    </div>
+
+    <p>{description}</p>
+  </div>
+</a>
+
+<style lang="scss">
+  .project {
+    display: flex;
+    gap: 1rem;
+    color: var(--content);
+    text-decoration: none;
+    padding: 1rem;
+    background-color: var(--outer-space-3);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      .project-header {
+        gap: 0.5rem;
+      }
+    }
+
+    &-header {
+      display: flex;
+      gap: 1rem;
+      flex-flow: row wrap;
+
+      &-title {
+        margin: 0;
+      }
+    }
+
+    &-tech {
+      display: flex;
+      gap: 0.5rem;
+
+      &-badge {
+        background-color: var(--secondary);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid var(--secondary-dark);
+        color: var(--outer-space-1);
+      }
+    }
+  }
+</style>

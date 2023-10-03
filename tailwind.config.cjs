@@ -46,6 +46,7 @@ module.exports = {
     "textAlign",
     "textColor",
     "textTransform",
+    "textDecoration",
     "width",
   ],
 };

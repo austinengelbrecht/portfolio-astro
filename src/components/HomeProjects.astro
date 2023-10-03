@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import arrowRight from "../assets/svg/arrow-right-line.svg";
+
+import ProjectsCard from "./projects/ProjectsCard.astro";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+projects.sort(
+  (a, b) =>
+    Date.parse(b.data.date.toISOString()) -
+    Date.parse(a.data.date.toISOString())
+);
+---
+
+<section class="projects">
+  <div class="projects-title">
+    <h2 class="projects-title-text">Recent Projects</h2>
+
+    {
+      projects.length > 3 && (
+        <a class="icon-link" href="/projects">
+          View All Projects
+          <Image src={arrowRight} alt="" />
+        </a>
+      )
+    }
+  </div>
+
+  <ul class="projects-list">
+    {
+      projects.slice(0, 3).map((page) => (
+        <li>
+          <ProjectsCard
+            url={"/projects/" + page.slug}
+            title={page.data.title}
+            description={page.data.description}
+            previewImg={page.data.previewImg}
+            tech={page.data.tech}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+  .projects {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    &-list {
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-flow: wrap;
+      margin: 3rem 0 1.38rem;
+
+      &-text {
+        margin: 0;
+      }
+    }
+  }
+</style>

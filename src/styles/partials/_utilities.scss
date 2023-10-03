@@ -5,3 +5,16 @@
     width: calc(1 / $columns * 100% - (1 - 1 / $columns) * $space);
   }
 }
+
+.icon-link {
+  display: flex;
+  align-content: center;
+  gap: 4px;
+  color: var(--content-color);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
