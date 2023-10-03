@@ -1,5 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import arrowLeft from "../../assets/svg/arrow-left-line.svg";
+
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -21,6 +25,10 @@ const { Content } = await page.render();
 
     <div class="page-background">
       <div class="page-content">
+        <a href="/projects">
+          <Image src={arrowLeft} alt="Back Arrow" aria-hidden="true" />
+           Back to Projects
+        </a>
         <h1 class="page-content-heading">{page.data.title}</h1>
 
         <Content />
@@ -58,9 +66,10 @@ const { Content } = await page.render();
     &-content {
       max-width: 845px;
       margin: 0 auto;
+      padding-top: 1rem;
 
       &-heading {
-        padding: 2rem 0;
+        padding: 1rem 0;
       }
     }
   }
