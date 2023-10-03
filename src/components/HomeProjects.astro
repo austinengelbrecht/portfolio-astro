@@ -19,7 +19,7 @@ projects.sort(
 
     {
       projects.length > 3 && (
-        <a class="projects-title-link" href="/projects">
+        <a class="icon-link" href="/projects">
           View All Projects
           <Image src={arrowRight} alt="" />
         </a>
@@ -64,17 +64,6 @@ projects.sort(
 
       &-text {
         margin: 0;
-      }
-
-      &-link {
-        color: var(--content);
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
