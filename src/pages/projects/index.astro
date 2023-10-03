@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import WorkCard from "../../components/WorkCard.astro";
+// import WorkCard from "../../components/WorkCard.astro";
+import ProjectsCard from "../../components/projects/ProjectsCard.astro";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
@@ -12,17 +13,32 @@ projects.sort(
 ---
 
 <Layout title="Work | Austin Engelbrecht">
-  <section class="p-8">
-    <ul class="flex flex-row gap-8">
+  <section class="projects">
+    <h1>Projects</h1>
+    <ul class="projects-list">
       {
         projects.map((page) => (
-          <WorkCard
+          <ProjectsCard
             url={"/projects/" + page.slug}
             title={page.data.title}
             description={page.data.description}
+            previewImg={page.data.previewImg}
+            tech={page.data.tech}
           />
         ))
       }
     </ul>
   </section>
 </Layout>
+
+<style lang="scss">
+  .projects {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 4rem 1rem 0;
+
+    &-list {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

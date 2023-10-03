@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import arrowRight from "../assets/svg/arrow-right-line.svg";
 
-import HomeProjectsCard from "./projects/ProjectsCard.astro";
+import ProjectsCard from "./projects/ProjectsCard.astro";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
@@ -30,8 +30,8 @@ projects.sort(
   <ul class="projects-list">
     {
       projects.slice(0, 3).map((page) => (
-        <li class="projects-list-item">
-          <HomeProjectsCard
+        <li>
+          <ProjectsCard
             url={"/projects/" + page.slug}
             title={page.data.title}
             description={page.data.description}
