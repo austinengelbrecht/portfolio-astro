@@ -74,3 +74,18 @@ const { Content } = await page.render();
     }
   }
 </style>
+
+<style lang="scss" is:global>
+  .page-img {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+</style>
