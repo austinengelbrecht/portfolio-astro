@@ -24,7 +24,7 @@ const { Content } = await page.render();
     <div class="page-graphic"></div>
 
     <div class="page-background">
-      <div class="page-content">
+      <section class="page-content">
         <a href="/projects" class="icon-link">
           <Image src={arrowLeft} alt="Back Arrow" aria-hidden="true" />
            Back to Projects
@@ -32,7 +32,7 @@ const { Content } = await page.render();
         <h1 class="page-content-heading">{page.data.title}</h1>
 
         <Content />
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
@@ -77,16 +77,23 @@ const { Content } = await page.render();
 
 <!-- ! I'm currently unhappy with this implementation, need to look into building a custom component or more preprocessing for images -->
 <style lang="scss" is:global>
-  .page-img {
-    display: flex;
-    justify-content: center;
-    height: 450px;
-    overflow: hidden;
+  .page-content {
+    .page-img {
+      display: flex;
+      justify-content: center;
+      height: 450px;
+      overflow: hidden;
 
-    > img {
-      width: 100%;
-      height: auto;
-      display: block;
+      // > img {
+      //   width: 680px;
+      //   height: auto;
+      //   display: block;
+      //   object-fit: cover;
+      // }
+    }
+
+    p {
+      font-size: 20px;
     }
   }
 </style>
