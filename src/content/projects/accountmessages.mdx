@@ -9,15 +9,16 @@ tech: ["Elm", "SASS", ".NET"]
 date: 2023-09-25
 ---
 
-<div class="page-img">
-  <img
-    src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/projects/account-messages/account-messages-page.png?t=2023-10-04T04%3A14%3A03.956Z"
-    alt="Final Account Messages Page Implementation"
-    width="600"
-    height="600"
-    aria-hidden="true"
-  />
-</div>
+import { Image } from "astro:assets";
+
+<Image
+  src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/projects/account-messages/account-messages-page.png?t=2023-10-04T04%3A14%3A03.956Z"
+  alt="Final Account Messages Page Implementation"
+  width="600"
+  height="600"
+  aria-hidden="true"
+  class="main-img"
+/>
 
 ## Rebuilding The Account Messages Page
 
@@ -49,8 +50,45 @@ Focusing on the page's detail, responsiveness, and functionality the page MVP wa
 
 After the new page design was released and implemented, there were several places that we still wanted to enhance to further the user experience.
 
-We added a place holder and load in animation when initially loading in the user's messages.
+<figure>
+  <Image
+    src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/projects/account-messages/accountmessages-loading-animation.gif?t=2023-10-10T04%3A26%3A40.665Z"
+    alt="Account messages loading animation"
+    width="600"
+    height="433"
+    aria-hidden="true"
+    loading="lazy"
+  />
+  <figcaption>(Loading Messages)</figcaption>
+</figure>
 
-When deleting a single message a small indicator appears to indicate that the deletion was being performed, afterwards we decided to keep placeholder showing that the deletion was successful.
+We added a place-holder and load-in animation when initially loading in the user's messages. This indicates to the user that there are messages to be loaded, but the service is still getting the user's messages.
 
-We also added a animation to better connect the changing display when deleting all messages.
+<figure>
+  <Image
+    src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/projects/account-messages/accountmessages-delete-animation.gif?t=2023-10-10T04%3A30%3A38.637Z"
+    alt="Account messages deleting all messages interaction"
+    width="600"
+    height="101"
+    aria-hidden="true"
+    loading="lazy"
+  />
+  <figcaption>(Deleting All Messages)</figcaption>
+</figure>
+
+We also added a animation when changing the display when deleting all messages. This helps keep the user
+connected as the tool opens to confirm the user action.
+
+<figure>
+  <Image
+    src="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/projects/account-messages/accountmessage-delete-single-animation.gif?t=2023-10-10T04%3A29%3A13.129Z"
+    alt="Account messages deleting single message interaction"
+    width="600"
+    height="146"
+    aria-hidden="true"
+    loading="lazy"
+  />
+  <figcaption>(Deleting a Single Messages)</figcaption>
+</figure>
+
+When deleting a single message a small indicator appears to indicate that the deletion was being performed, afterwards we decided to keep placeholder showing that the deletion was successful. Unfortunately, we ran out of time to finish polishing this layout animation, but this is definitely an area of interest to improve when time allows in the future.
