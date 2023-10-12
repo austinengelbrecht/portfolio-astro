@@ -1,19 +1,24 @@
 ---
-
+import { Image } from "astro:assets";
+import bookOpen from "../assets/svg/homepage/book-open-line.svg";
+import codeLine from "../assets/svg/homepage/code-line.svg";
 ---
 
 <section class="intro">
-  <div>
+  <div class="intro-block">
+    <Image src={codeLine} alt="" />
     <h3>Web Dev</h3>
     <p>Lorem Ipsum</p>
   </div>
 
-  <div>
-    <h3></h3>
+  <div class="intro-block">
+    <Image src={codeLine} alt="" />
+    <h3>Lorem Ipsum</h3>
     <p>Lorem Ipsum</p>
   </div>
 
-  <div>
+  <div class="intro-block">
+    <Image src={bookOpen} alt="" />
     <h3>Always Learning</h3>
     <p>Lorem Ipsum</p>
   </div>
@@ -24,5 +29,11 @@
     display: flex;
     gap: 2rem;
     justify-content: center;
+
+    &-block {
+      h3 {
+        margin-top: 0;
+      }
+    }
   }
 </style>
