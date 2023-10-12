@@ -37,10 +37,16 @@ import monitorLine from "../assets/svg/homepage/monitor-line.svg";
     margin: 0 auto;
     padding: 1rem;
 
-    display: flex;
+    border-radius: 8px;
+    border: 2px solid var(--outer-space-3);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    justify-content: center;
-    flex-flow: row wrap;
+
+    @media (max-width: 904px) {
+      grid-template-columns: 1fr;
+    }
 
     &-block {
       max-width: 310px;
