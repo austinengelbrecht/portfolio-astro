@@ -2,35 +2,49 @@
 import { Image } from "astro:assets";
 import bookOpen from "../assets/svg/homepage/book-open-line.svg";
 import codeLine from "../assets/svg/homepage/code-line.svg";
+import monitorLine from "../assets/svg/homepage/monitor-line.svg";
 ---
 
 <section class="intro">
   <div class="intro-block">
     <Image src={codeLine} alt="" />
     <h3>Web Dev</h3>
-    <p>Lorem Ipsum</p>
+    <p>Building digital experiences one line of code at a time.</p>
   </div>
 
   <div class="intro-block">
-    <Image src={codeLine} alt="" />
-    <h3>Lorem Ipsum</h3>
-    <p>Lorem Ipsum</p>
+    <Image src={monitorLine} alt="" />
+    <h3>User Experience</h3>
+    <p>
+      Crafting memorable UX, by fostering accessability and front-end
+      interaction.
+    </p>
   </div>
 
   <div class="intro-block">
     <Image src={bookOpen} alt="" />
     <h3>Always Learning</h3>
-    <p>Lorem Ipsum</p>
+    <p>
+      Currently, I am building my skills in the backend and system level
+      languages.
+    </p>
   </div>
 </section>
 
 <style lang="scss">
   .intro {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
+    flex-flow: row wrap;
 
     &-block {
+      max-width: 310px;
+      padding: 0.5rem;
       h3 {
         margin-top: 0;
       }
