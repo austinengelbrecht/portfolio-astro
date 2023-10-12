@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import bookOpen from "../assets/svg/homepage/book-open-line.svg";
+import codeLine from "../assets/svg/homepage/code-line.svg";
+import monitorLine from "../assets/svg/homepage/monitor-line.svg";
+---
+
+<section class="intro">
+  <div class="intro-block">
+    <Image src={codeLine} alt="" />
+    <h3>Web Developer</h3>
+    <p>Building digital experiences one line of code at a time.</p>
+  </div>
+
+  <div class="intro-block">
+    <Image src={monitorLine} alt="" />
+    <h3>User Experience</h3>
+    <p>
+      Crafting memorable UX, by fostering accessability and front-end
+      interaction.
+    </p>
+  </div>
+
+  <div class="intro-block">
+    <Image src={bookOpen} alt="" />
+    <h3>Always Learning</h3>
+    <p>
+      Currently, I am building my skills in the backend and system level
+      languages.
+    </p>
+  </div>
+</section>
+
+<style lang="scss">
+  .intro {
+    max-width: 1024px;
+    margin: 0 auto 8rem;
+    padding: 1rem;
+
+    border-radius: 8px;
+    border: 2px solid var(--outer-space-3);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 904px) {
+      grid-template-columns: 1fr;
+      margin: 1rem 1rem 2rem;
+    }
+
+    &-block {
+      max-width: 310px;
+      padding: 0.5rem;
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+</style>
