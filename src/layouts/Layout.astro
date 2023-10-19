@@ -2,18 +2,79 @@
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import Header from "../components/layout/SiteHeader.astro";
 
-const { title = "Austin Engelbrect | Front-end Dev" } = Astro.props;
+const { title = "Austin Engelbrecht | Web Dev" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+
+    <meta
+      name="description"
+      content="Austin is a Web Developer, who is always leveling up, one day at a time."
+    />
+
+    <meta itemprop="name" content="Austin Engelbrecht" />
+    <meta
+      itemprop="description"
+      content="Austin is a Web Developer, who is always leveling up, one day at a time."
+    />
+    <meta
+      itemprop="image"
+      content="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/default_share_image.png?t=2023-10-18T02%3A55%3A45.622Z"
+    />
+
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="google" content="notranslate" />
+
+    <meta name="rating" content="General" />
+
+    <meta name="pinterest" content="nopin" />
+
+    <meta name="twitter:dnt" content="on" />
+
+    <meta property="og:title" content="Austin Engelbrecht" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.austinengelbrecht.com/" />
+    <meta
+      property="og:description"
+      content="Austin is a Web Developer, who is always leveling up, one day at a time."
+    />
+    <meta
+      property="og:image"
+      content="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/default_share_image.png?t=2023-10-18T02%3A55%3A45.622Z"
+    />
+    <meta
+      property="og:image:alt"
+      content="austinengelbrecht.com share graphic"
+    />
+    <meta property="og:site_name" content="Austin Engelbrecht" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://www.austinengelbrecht.com/" />
+    <meta name="twitter:title" content="Austin Engelbrecht" />
+    <meta
+      name="twitter:description"
+      content="Austin is a Web Developer, who is always leveling up, one day at a time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://npjmxgrfqyrxnbnmltws.supabase.co/storage/v1/object/public/images/default_share_image.png?t=2023-10-18T02%3A55%3A45.622Z"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="austinengelbrecht.com share graphic"
+    />
   </head>
   <body>
     <Header />

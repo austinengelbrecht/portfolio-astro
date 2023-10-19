@@ -7,9 +7,9 @@ import arrowLeft from "../../assets/svg/arrow-left-line.svg";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const workproject = await getCollection("workprojects");
 
-  return projects.map((page) => ({
+  return workproject.map((page) => ({
     params: { slug: page.slug },
     props: { page },
   }));
@@ -25,9 +25,9 @@ const { Content } = await page.render();
 
     <div class="page-background">
       <section class="page-content">
-        <a href="/projects" class="icon-link">
+        <a href="/work" class="icon-link">
           <Image src={arrowLeft} alt="Back Arrow" aria-hidden="true" />
-           Back to Projects
+           Back to Work Projects
         </a>
         <h1 class="page-content-heading">{page.data.title}</h1>
 
