@@ -3,8 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import ProjectsCard from "../../components/projects/ProjectsCard.astro";
 
 import { getCollection } from "astro:content";
-const projects = await getCollection("projects");
-projects.sort(
+const work = await getCollection("projects");
+work.sort(
   (a, b) =>
     Date.parse(b.data.date.toISOString()) -
     Date.parse(a.data.date.toISOString())
@@ -12,13 +12,13 @@ projects.sort(
 ---
 
 <Layout title="Work | Austin Engelbrecht">
-  <section class="projects">
-    <h1>Projects</h1>
-    <ul class="projects-list">
+  <section class="work">
+    <h1>Work Projects</h1>
+    <ul class="work-list">
       {
-        projects.map((page) => (
+        work.map((page) => (
           <ProjectsCard
-            url={"/projects/" + page.slug}
+            url={"/work/" + page.slug}
             title={page.data.title}
             description={page.data.description}
             previewImg={page.data.previewImg}
@@ -31,7 +31,7 @@ projects.sort(
 </Layout>
 
 <style lang="scss">
-  .projects {
+  .work {
     max-width: 1024px;
     margin: 0 auto;
     padding: 4rem 1rem 0;
