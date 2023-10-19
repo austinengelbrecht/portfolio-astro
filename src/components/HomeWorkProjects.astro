@@ -2,11 +2,11 @@
 import { Image } from "astro:assets";
 import arrowRight from "../assets/svg/arrow-right-line.svg";
 
-import ProjectsCard from "./projects/ProjectsCard.astro";
+import WorkProjectCard from "./work/WorkProjectCard.astro";
 
 import { getCollection } from "astro:content";
-const projects = await getCollection("projects");
-projects.sort(
+const workprojects = await getCollection("workprojects");
+workprojects.sort(
   (a, b) =>
     Date.parse(b.data.date.toISOString()) -
     Date.parse(a.data.date.toISOString())
@@ -15,12 +15,12 @@ projects.sort(
 
 <section class="projects">
   <div class="projects-title">
-    <h2 class="projects-title-text">Recent Projects</h2>
+    <h2 class="projects-title-text">Recent Work Projects</h2>
 
     {
-      projects.length > 3 && (
-        <a class="icon-link" href="/projects">
-          View All Projects
+      workprojects.length > 3 && (
+        <a class="icon-link" href="/work">
+          View All Work Projects
           <Image src={arrowRight} alt="" />
         </a>
       )
@@ -29,10 +29,10 @@ projects.sort(
 
   <ul class="projects-list">
     {
-      projects.slice(0, 3).map((page) => (
+      workprojects.slice(0, 3).map((page) => (
         <li>
-          <ProjectsCard
-            url={"/projects/" + page.slug}
+          <WorkProjectCard
+            url={"/work/" + page.slug}
             title={page.data.title}
             description={page.data.description}
             previewImg={page.data.previewImg}
