@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import WorkProjectCard from "../../components/work/WorkProjectCard.astro";
 
 import { getCollection } from "astro:content";
-const work = await getCollection("projects");
+const work = await getCollection("workprojects");
 work.sort(
   (a, b) =>
     Date.parse(b.data.date.toISOString()) -

@@ -7,9 +7,9 @@ import arrowLeft from "../../assets/svg/arrow-left-line.svg";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const workproject = await getCollection("workprojects");
 
-  return projects.map((page) => ({
+  return workproject.map((page) => ({
     params: { slug: page.slug },
     props: { page },
   }));
