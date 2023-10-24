@@ -3,12 +3,31 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Contact Me | Austin Engelbrecht">
-  <h1>Contact Me</h1>
-  <p>
-    Hey there! I'd love to hear from you! If you have any questions,
-    suggestions, or just want to say hi, drop me a message by filling out the
-    form below.
-  </p>
+  <section class="contact">
+    <div class="contact-header">
+      <h1>Contact Me</h1>
+      <p>
+        Hey there! I'd love to hear from you! If you have any questions,
+        suggestions, or just want to say hi, drop me a message by filling out
+        the form below.
+      </p>
+    </div>
 
-  <form></form>
+    <form class="contact-form">
+      <label for="name">
+        Name
+        <input id="name" type="text" name="name" placeholder="Your Name" />
+      </label>
+      <label for="name">
+        Email
+        <input id="name" type="text" name="name" placeholder="Your Name" />
+      </label>
+      <label for="name">
+        Message
+        <textarea></textarea>
+      </label>
+
+      <button>Send Message</button>
+    </form>
+  </section>
 </Layout>
