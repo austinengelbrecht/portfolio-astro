@@ -6,8 +6,16 @@ module.exports = {
       transparent: "transparent",
       white: "#ffffff",
       black: "#000000",
-      primary: "#cda715",
-      secondary: "#b6eada",
+      // primary: "#cda715",
+      primary: {
+        DEFAULT: "#cda715",
+        dark: "#a28511",
+      },
+      // secondary: "#b6eada",
+      secondary: {
+        DEFAULT: "#b6eada",
+        dark: "#93c8c2",
+      },
       content: "#efedff",
       space: {
         1: "#03001c",
