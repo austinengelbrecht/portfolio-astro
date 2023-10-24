@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
 
     <form class="contact-form">
       <label for="name" class="contact-form-label">
-        Name
+        <span>Name</span>
         <input
           id="name"
           class="contact-form-input"
@@ -23,10 +23,11 @@ import Layout from "../layouts/Layout.astro";
           name="name"
           placeholder="Your Name"
           type="text"
+          required
         />
       </label>
       <label for="email" class="contact-form-label">
-        Email
+        <span>Email</span>
         <input
           id="email"
           class="contact-form-input"
@@ -34,14 +35,16 @@ import Layout from "../layouts/Layout.astro";
           name="email"
           placeholder="Your Name"
           type="email"
+          required
         />
       </label>
       <label for="message" class="contact-form-label">
-        Message
+        <span>Message</span>
         <textarea
           id="message"
           class="contact-form-input"
-          placeholder="Your Message"></textarea>
+          placeholder="Your Message"
+          required></textarea>
       </label>
 
       <button>Send Message</button>
@@ -52,8 +55,12 @@ import Layout from "../layouts/Layout.astro";
 <style lang="scss">
   .contact {
     max-width: 700px;
-    padding: 1rem;
+    padding: 4rem 1rem 1rem;
     margin: 0 auto;
+
+    @media (max-width: 700px) {
+      padding: 2rem 1rem 1rem;
+    }
 
     &-header {
       margin-bottom: 4rem;
@@ -67,6 +74,11 @@ import Layout from "../layouts/Layout.astro";
       &-label {
         display: flex;
         flex-direction: column;
+        font-size: 1.25rem;
+
+        > span {
+          margin-bottom: 0.25rem;
+        }
       }
 
       &-input {
