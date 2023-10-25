@@ -1,7 +1,3 @@
----
-import HeaderButton from "./HeaderButton.astro";
----
-
 <section class="hero flex flex-wrap justify-center items-center">
   <div class="hero-img-container">
     <img
@@ -31,10 +27,11 @@ import HeaderButton from "./HeaderButton.astro";
       projects, I am constantly striving to learn and grow as a developer.
     </p>
 
-    <HeaderButton />
+    <a href="/aboutme" class="primary-button">More About Me</a>
   </div>
 </section>
 
 <style lang="scss" scoped>
   @import "../styles/partials/homepage/home-hero.scss";
+  @import "../styles/partials/shared/buttons.scss";
 </style>
