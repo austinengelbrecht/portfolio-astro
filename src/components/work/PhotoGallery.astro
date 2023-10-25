@@ -5,7 +5,8 @@ import arrowDown from "../../assets/svg/arrow-down-line.svg";
 
 const { dataLink } = Astro.props;
 
-const reponse = await fetch(Astro.url.origin + dataLink);
+await console.log(Astro.url.origin + dataLink);
+const reponse = await fetch(Astro.url.origin + "/api/accountMessages");
 let data = await reponse.json();
 ---
 
