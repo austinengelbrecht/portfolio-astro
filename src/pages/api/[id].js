@@ -10,11 +10,14 @@ const test = [
 
 export async function GET({ params, request }) {
   const id = params.id;
-
   let data;
+
   if (id == "accountMessages") {
     data = test;
+  } else {
+    throw new Error("Unknown Id");
   }
+
   return new Response(JSON.stringify(data));
 }
 
