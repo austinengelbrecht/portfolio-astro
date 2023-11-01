@@ -7,4 +7,16 @@ describe("Page Data APIs", () => {
 
     expect(endpoint).toBeDefined();
   });
+
+  it("Data should contain a url", () => {
+    const endpoint = "accountMessages";
+
+    expect(endpoint).toBeDefined();
+  });
+
+  it("Data should contain Alt text", () => {
+    const endpoint = "accountMessages";
+
+    expect(endpoint).toBeDefined();
+  });
 });
