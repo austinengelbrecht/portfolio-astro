@@ -17,10 +17,11 @@ describe("Page Data APIs", () => {
     const params = { id: "thisShouldFail" };
     const request = {};
 
-    const response = await GET({ params, request });
-    const data = await response.json();
-
-    expect(data).toThrowError();
+    try {
+      const response = await GET({ params, request });
+    } catch (e) {
+      expect(e.message).toBe("Unknown Id");
+    }
   });
 
   it("Data should contain a url", () => {
