@@ -1,9 +1,7 @@
-import { it, expect, describe } from "vitest";
+import { it, expect, describe, beforeEach } from "vitest";
 
-describe("Photo Gallery", () => {
-  it("Test the Test", () => {
-    const endpoint = "accountMessages";
+it("Test the Test", () => {
+  const endpoint = "accountMessages";
 
-    expect(endpoint).toBeDefined();
-  });
+  expect(endpoint).toBeDefined();
 });
