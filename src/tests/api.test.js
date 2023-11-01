@@ -1,11 +1,16 @@
 import { it, expect, describe } from "vitest";
-// import GET from "../pages/api/[id]";
+
+import { GET } from "../pages/api/[id].js";
 
 describe("Page Data APIs", () => {
-  it("Get Data from API", () => {
-    const endpoint = "accountMessages";
+  it("Get Photo Data from API", async () => {
+    const params = { id: "accountMessages" };
+    const request = {};
 
-    expect(endpoint).toBeDefined();
+    const response = await GET({ params, request });
+    const data = await response.json();
+
+    expect(data).toBeDefined();
   });
 
   it("Data should contain a url", () => {
