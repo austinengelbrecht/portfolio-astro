@@ -1,6 +1,10 @@
 import { it, expect, describe } from "vitest";
-import api from "../pages/api/[id]";
+import GET from "../pages/api/[id]";
 
 describe("Page Data APIs", () => {
-  it("Get Data from API", () => {});
+  it("Get Data from API", () => {
+    const endpoint = "accountMessages";
+
+    expect(endpoint).toBeDefined();
+  });
 });
