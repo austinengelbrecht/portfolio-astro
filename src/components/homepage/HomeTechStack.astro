@@ -15,35 +15,54 @@ data.sort((a, b) => {
 });
 ---
 
-<section class="stack">
-  <div class="marquee">
-    <ul class="marquee-content">
-      {
-        data.map((img) => (
-          <li class="">
-            <img src={img.src} alt={img.alt} width="50" height="50" />
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<section class="marquee">
+  <ul class="marquee-content">
+    {
+      data.map((img) => (
+        <li class="">
+          <img src={img.src} alt={img.alt} width="50" height="50" />
+        </li>
+      ))
+    }
+  </ul>
 </section>
 
 <style lang="scss">
-  .test {
-    display: none;
+  .marquee {
+    // display: flex;
+    overflow: hidden;
+    // gap: 1rem;
+
+    &-content {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1rem;
+      min-width: 100%;
+      animation: scrolling 20s linear infinite;
+    }
   }
 
-  // :root {
-  //   --color-text: navy;
-  //   --color-bg: papayawhip;
-  //   --color-bg-accent: #ecdcc0;
-  //   --size: clamp(10rem, 1rem + 40vmin, 30rem);
-  //   --gap: calc(var(--size) / 14);
-  //   --duration: 60s;
-  //   --scroll-start: 0;
-  //   --scroll-end: calc(-100% - var(--gap));
-  // }
+  @keyframes scrolling {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(var(--scroll-end));
+    }
+  }
+
+  :root {
+    //   --color-text: navy;
+    //   --color-bg: papayawhip;
+    //   --color-bg-accent: #ecdcc0;
+    --size: clamp(10rem, 1rem + 40vmin, 30rem);
+    --gap: calc(var(--size) / 14);
+    //   --duration: 60s;
+    //   --scroll-start: 0;
+    --scroll-end: calc(-100% - var(--gap));
+  }
 
   // @media (prefers-color-scheme: dark) {
   //   :root {
