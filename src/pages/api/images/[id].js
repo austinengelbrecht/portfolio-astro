@@ -33,6 +33,18 @@ const techStackIcons = [
     src: "https://camo.githubusercontent.com/6a89c40d54fde3f7c40b827e46081e4057633764c07bc9bca4ed513689eb2a8e/68747470733a2f2f70696e69612e7675656a732e6f72672f6c6f676f2e737667",
     alt: "Pinia",
   },
+  {
+    src: "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png",
+    alt: "Sass",
+  },
+  {
+    src: "https://raw.githubusercontent.com/github/explore/261c2cda92d09ccad6f8b2dc91af32a2a5856989/topics/tailwind/tailwind.png",
+    alt: "TailwindCSS",
+  },
+  {
+    src: "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png",
+    alt: "Vue JS",
+  },
 ];
 
 export async function GET({ params, request }) {

@@ -3,6 +3,18 @@ import { Image } from "astro:assets";
 
 const response = await fetch(Astro.url.origin  + '/api/images/techStackIcons');
 const data = await response.json();
+data.sort((a, b) => {
+  const altA = a.alt.toLowerCase();
+  const altB = b.alt.toLowerCase();
+
+  if (altA < altB) {
+    return -1;
+  }
+  if (altA > altB) {
+    return 1;
+  }
+  return 0;
+});
 ---
 
 <section class="stack">
