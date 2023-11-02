@@ -8,7 +8,13 @@ const test = [
   { src: "https://picsum.photos/seed/pfqq/600", alt: "Some alt text" },
 ];
 
-const techStackIcons = [{ src: "test", alt: "test" }];
+const techStackIcons = [
+  {
+    src: "https://raw.githubusercontent.com/github/explore/5cc0a03a302ec862c4aeac2a22a513ae31c35432/topics/astro/astro.png",
+    alt: "Astro",
+  },
+  { src: "", alt: "" },
+];
 
 export async function GET({ params, request }) {
   const id = params.id;

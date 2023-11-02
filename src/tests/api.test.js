@@ -24,6 +24,17 @@ describe("Photo Data - /api/images/accountMessages", () => {
     expect(data).toBeDefined();
   });
 
+  it("Should have more than one data entry", async () => {
+    const params = { id: "accountMessages" };
+    const request = {};
+
+    const response = await GET({ params, request });
+    const data = await response.json();
+    const dataLength = data.length;
+
+    expect(dataLength).toBeGreaterThan(1);
+  });
+
   it("Each data entry should contain a 'src'", async () => {
     const params = { id: "accountMessages" };
     const request = {};
@@ -58,6 +69,17 @@ describe("Photo Data - /api/images/techStackIcons", () => {
     const data = await response.json();
 
     expect(data).toBeDefined();
+  });
+
+  it("Should have more than one data entry", async () => {
+    const params = { id: "accountMessages" };
+    const request = {};
+
+    const response = await GET({ params, request });
+    const data = await response.json();
+    const dataLength = data.length;
+
+    expect(dataLength).toBeGreaterThan(1);
   });
 
   it("Each data entry should contain a 'src'", async () => {
