@@ -1,12 +1,19 @@
 ---
-const response = await fetch('/api/images/techStackIcons');
+import { Image } from "astro:assets";
+
+const response = await fetch(Astro.url.origin  + '/api/images/techStackIcons');
 const data = await response.json();
 ---
 
 <section class="stack">
   <ul>
-    { }
-    
+    { 
+      data.map((img) => (
+        <li>
+          <img src={img.src} alt={img.alt} width="100" height="100"/> 
+        </li>
+      ))
+    }
   </ul>
 </section>
 
