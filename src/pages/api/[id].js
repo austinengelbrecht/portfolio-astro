@@ -8,12 +8,16 @@ const test = [
   { src: "https://picsum.photos/seed/pfqq/600", alt: "Some alt text" },
 ];
 
+const techStackIcons = [{ src: "test", alt: "test" }];
+
 export async function GET({ params, request }) {
   const id = params.id;
   let data;
 
   if (id == "accountMessages") {
     data = test;
+  } else if (id == "techStackIcons") {
+    data = techStackIcons;
   } else {
     throw new Error("Unknown Id");
   }
@@ -22,5 +26,8 @@ export async function GET({ params, request }) {
 }
 
 export function getStaticPaths() {
-  return [{ params: { id: "accountMessages" } }];
+  return [
+    { params: { id: "accountMessages" } },
+    { params: { id: "techStackIcons" } },
+  ];
 }
