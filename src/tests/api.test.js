@@ -72,7 +72,7 @@ describe("Photo Data - /api/images/techStackIcons", () => {
   });
 
   it("Should have more than one data entry", async () => {
-    const params = { id: "accountMessages" };
+    const params = { id: "techStackIcons" };
     const request = {};
 
     const response = await GET({ params, request });
