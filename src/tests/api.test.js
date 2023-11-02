@@ -1,8 +1,8 @@
 import { it, expect, describe } from "vitest";
 
-import { GET } from "../pages/api/[id].js";
+import { GET } from "../pages/api/images/[id].js";
 
-describe("Photo Data - /api/accountMessages", () => {
+describe("Photo Data - /api/images/accountMessages", () => {
   it("Return Photo Data from API", async () => {
     const params = { id: "accountMessages" };
     const request = {};
