@@ -23,7 +23,8 @@
     background-position: center;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--primary);
     color: var(--outer-space-1);
     transform: translateY(-2px);
@@ -40,4 +41,12 @@
       background-color: var(--primary-dark);
     }
   }
+}
+
+.secondary-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary);
+  color: var(--outer-space-1);
+  border-radius: 8px;
+  text-decoration: none;
 }
