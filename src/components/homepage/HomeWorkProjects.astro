@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import arrowRight from "../assets/svg/arrow-right-line.svg";
+import arrowRight from "../../assets/svg/arrow-right-line.svg";
 
-import WorkProjectCard from "./work/WorkProjectCard.astro";
+import WorkProjectCard from "../work/WorkProjectCard.astro";
 
 import { getCollection } from "astro:content";
 const workprojects = await getCollection("workprojects");
@@ -50,6 +50,7 @@ workprojects.sort(
   .projects {
     max-width: 1024px;
     margin: 0 auto;
+    padding: 0 1rem; 
 
     &-list {
       margin-bottom: 1rem;
