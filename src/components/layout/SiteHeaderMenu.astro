@@ -2,19 +2,25 @@
   <li>
     <a class="menu-link" href="/aboutme">About Me</a>
   </li>
+  <li>
+    <a class="menu-link" href="/contact">Contact</a>
+  </li>
 </ul>
 
 <style lang="scss">
-.menu {
-  &-link {
-    text-decoration: none;
-    color: #efedff;
+  .menu {
+    display: flex;
+    gap: 2rem;
 
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-      cursor: pointer;
+    &-link {
+      text-decoration: none;
+      color: #efedff;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
-}
 </style>

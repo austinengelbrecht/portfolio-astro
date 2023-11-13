@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact Me | Austin Engelbrecht">
+  <section class="contact">
+    <div class="contact-header">
+      <h1>Contact Me</h1>
+      <p>
+        Hey there! I'd love to hear from you! If you have any questions,
+        suggestions, or just want to say hi, drop me a message by filling out
+        the form below.
+      </p>
+    </div>
+
+    <form
+      class="contact-form"
+      name="contact"
+      method="post"
+      action="/thankyou"
+      data-netlify="true"
+      netlify-honeypot="hpfield"
+      data-netlify-recaptcha="true"
+    >
+      <input type="hidden" name="hpfield" value="contact-me" />
+
+      <label for="name" class="contact-form-label">
+        <span>Name</span>
+        <input
+          id="name"
+          class="contact-form-input"
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          type="text"
+          required
+        />
+      </label>
+      <label for="email" class="contact-form-label">
+        <span>Email</span>
+        <input
+          id="email"
+          class="contact-form-input"
+          type="text"
+          name="email"
+          placeholder="Your Name"
+          type="email"
+          required
+        />
+      </label>
+      <label for="message" class="contact-form-label">
+        <span>Message</span>
+        <textarea
+          id="message"
+          class="contact-form-input"
+          placeholder="Your Message"
+          required></textarea>
+      </label>
+
+      <div>
+        <div data-netlify-recaptcha="true"></div>
+        <button class="contact-submit" type="submit">Send Message</button>
+      </div>
+    </form>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .contact {
+    max-width: 700px;
+    padding: 4rem 1rem 1rem;
+    margin: 0 auto;
+
+    @media (max-width: 700px) {
+      padding: 2rem 1rem 1rem;
+    }
+
+    &-header {
+      margin-bottom: 4rem;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &-label {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.25rem;
+
+        > span {
+          margin-bottom: 0.25rem;
+        }
+      }
+
+      &-input {
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+    }
+
+    &-submit {
+      background-color: var(--outer-space-1);
+      padding: 0 0 0 1.5rem;
+      border: 1px solid var(--primary);
+      border-radius: 2rem;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.2s ease-in;
+      color: var(--content);
+      text-decoration: none;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        height: 40px;
+        width: 40px;
+        background-color: var(--primary);
+        border-radius: 100%;
+        margin-left: 0.75rem;
+        background-image: url("../assets/svg/arrow-right-dark.svg");
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--primary);
+        color: var(--outer-space-1);
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      &:active {
+        transform: translateY(0px);
+        box-shadow: none;
+        background-color: var(--primary-dark);
+        transition: transform 0s;
+
+        &::after {
+          background-color: var(--primary-dark);
+        }
+      }
+    }
+  }
+</style>
