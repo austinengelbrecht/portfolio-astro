@@ -13,7 +13,17 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </div>
 
-    <form class="contact-form">
+    <form
+      class="contact-form"
+      name="contact"
+      method="post"
+      action="/"
+      data-netlify="true"
+      netlify-honeypot="hpfield"
+      data-netlify-recaptcha="true"
+    >
+      <input type="hidden" name="hpfield" value="contact-me" />
+
       <label for="name" class="contact-form-label">
         <span>Name</span>
         <input
@@ -48,7 +58,8 @@ import Layout from "../layouts/Layout.astro";
       </label>
 
       <div>
-        <button class="contact-submit">Send Message</button>
+        <div data-netlify-recaptcha="true"></div>
+        <button class="contact-submit" type="submit">Send Message</button>
       </div>
     </form>
   </section>
