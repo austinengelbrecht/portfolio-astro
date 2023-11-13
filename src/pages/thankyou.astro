@@ -4,13 +4,12 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Thank You | Austin Engelbrecht">
   <section class="ty">
-    <div class="ty-info">
-      <h1>Thank You!</h1>
-      <p>
-        Your form has been submitted, and I appreciate you taking the time to
-        contact me!
-      </p>
-    </div>
+    <h1>Thank You!</h1>
+    <p>
+      Your form has been submitted, and I appreciate you taking the time to
+      contact me!
+    </p>
+    <a href="/">Home</a>
   </section>
 </Layout>
 
@@ -18,14 +17,12 @@ import Layout from "../layouts/Layout.astro";
   .ty {
     padding: 1rem;
 
-    &-info {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>
