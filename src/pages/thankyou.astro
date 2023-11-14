@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Thank You | Austin Engelbrecht">
+  <section class="ty">
+    <h1>Thank You!</h1>
+    <p class="ty-info">
+      Your form has been submitted, and I appreciate you taking the time to
+      contact me!
+    </p>
+    <a href="/" class="secondary-button">Home</a>
+  </section>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/partials/shared/buttons.scss";
+
+  .ty {
+    padding: 1rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-info {
+      text-align: center;
+    }
+  }
+</style>

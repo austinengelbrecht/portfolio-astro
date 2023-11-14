@@ -1,0 +1,44 @@
+---
+
+---
+
+<section class="contact">
+  <div>
+    <h2>Get In Touch With Me!</h2>
+    <p>
+      I want to hear from you! Get in touch with your feedback, suggestions, and
+      other interesting ideas.
+    </p>
+  </div>
+
+  <div class="contact-button">
+    <a href="/contact" class="primary-button">Contact Me</a>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../../styles/partials/shared/buttons.scss";
+
+  .contact {
+    max-width: 1024px;
+    margin: 4rem auto;
+    padding: 2rem;
+
+    border-radius: 8px;
+    border: 2px solid var(--outer-space-3);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 904px) {
+      margin: 4rem 1rem 2rem;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+</style>

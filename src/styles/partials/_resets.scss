@@ -37,3 +37,10 @@ input[type="submit"] {
   -moz-appearance: none;
   appearance: none;
 }
+
+input,
+textarea {
+  font-family: "Source Sans Pro";
+  color: var(--outer-space-1);
+  background-color: var(--content);
+}
