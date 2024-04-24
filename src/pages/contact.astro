@@ -15,14 +15,14 @@ import Layout from "../layouts/Layout.astro";
 
     <form
       class="contact-form"
-      name="contact"
+      name="contact-me"
       method="post"
       action="/thankyou"
       data-netlify="true"
-      netlify-honeypot="hpfield"
+      netlify-honeypot
       data-netlify-recaptcha="true"
     >
-      <input type="hidden" name="hpfield" value="contact-me" />
+      <input type="hidden" name="contact" value="contact-me" />
 
       <label for="name" class="contact-form-label">
         <span>Name</span>
