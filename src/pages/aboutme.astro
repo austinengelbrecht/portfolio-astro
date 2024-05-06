@@ -1,26 +1,25 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import currentAge from "../js/currentAge";
+
+let age = currentAge(1999);
 ---
 
 <Layout title="About Me | Austin Engelbrecht">
   <div class="about">
-    <!-- <Image src="" alt="" /> -->
     <section>
       <h1>About Me</h1>
       <p>
         Hey, and welcome to my little corner of the internet! I'm Austin, and
-        I'm thrilled that you've taken the time to visit my piece on the
-        internet.
+        I'm thrilled that you've taken the time to visit!
       </p>
     </section>
     <section>
       <h2>Who am I?</h2>
       <p>
-        I'm a 24 year old Web Developer located in Missouri, USA, with a deep
-        passion for the web and its sorounding technology. I've always been
-        facinated by creating digital experiences, and I'm on a mission to
-        create them myself.
+        I'm a {age} year old Web Developer located in Illinois, with a deep passion
+        for the web and its sorounding technology. I've always been facinated by
+        creating digital experiences, and I'm on a mission to create them myself.
       </p>
     </section>
     <section>
@@ -39,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
         need arises.
       </p>
       <p>
-        In my free time I enjoy working in Vue and Nuxt on my personal web
+        In my free time I enjoy working in Vue and Astro on my personal web
         projects. And when I'm not working on the web, I have taken enjoyment in
         working in Rust.
       </p>
