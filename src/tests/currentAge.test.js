@@ -18,4 +18,12 @@ describe("Calculate Current Age", () => {
 
     expect(act).toBe(expectedAge);
   });
+
+  it("Calculates current age correctly for current year", () => {
+    const currentYear = new Date().getFullYear();
+
+    let act = currentAge(currentYear);
+
+    expect(act).toBe(0);
+  });
 });
